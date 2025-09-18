@@ -339,7 +339,11 @@ const feedback = await puter.ai.chat(
 
 This project is part of the Stratix I.T Company Project. Check the repository for specific licensing terms.
 
+## Live Demo
+
+- **For live demo of this project please visit:** https://resumeiq1.vercel.app 
 
 ---
 
 Built with ❤️ for job seekers everywhere. Empower your career with AI-driven resume insights.
+
