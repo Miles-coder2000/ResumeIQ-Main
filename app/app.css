@@ -16,16 +16,30 @@
   --color-badge-green-text: #254d4a;
   --color-badge-red-text: #752522;
   --color-badge-yellow-text: #73321b;
+
+  /* Dark mode colors */
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-border: #334155;
+  --color-dark-text: #f1f5f9;
+  --color-dark-text-secondary: #94a3b8;
 }
 
 html,
 body {
   @apply bg-white;
+  transition: background-color 0.3s ease;
+}
+
+html.dark,
+html.dark body {
+  @apply bg-slate-900 text-white;
 }
 
 main {
   @apply min-h-screen pt-10;
 }
+
 h1 {
   @apply text-6xl  text-gradient leading-tight tracking-[-2px] font-semibold;
 }
@@ -34,15 +48,32 @@ h2 {
   @apply text-3xl text-dark-200;
 }
 
+.dark h2 {
+  @apply text-slate-300;
+}
+
 label {
   @apply text-dark-200;
 }
+
+.dark label {
+  @apply text-slate-300;
+}
+
 input {
   @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
 }
 
+.dark input {
+  @apply bg-slate-800 text-white border-slate-600;
+}
+
 textarea {
   @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+}
+
+.dark textarea {
+  @apply bg-slate-800 text-white border-slate-600;
 }
 
 form {
@@ -56,11 +87,17 @@ form {
   .gradient-border {
     @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-3 sm:p-4 rounded-2xl w-full;
   }
+  .dark .gradient-border {
+    @apply bg-gradient-to-b from-slate-700 to-slate-600;
+  }
   .primary-button {
     @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
   }
   .resume-nav {
     @apply flex flex-row justify-between items-center p-3 sm:p-4 border-b border-gray-200 bg-white sticky top-0 z-10 shadow-sm;
+  }
+  .dark .resume-nav {
+    @apply border-slate-700 bg-slate-900;
   }
   .resume-summary {
     @apply flex flex-row items-center justify-center p-4 gap-4;
@@ -68,8 +105,14 @@ form {
       @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
     }
   }
+  .dark .resume-summary .category {
+    @apply bg-slate-800;
+  }
   .back-button {
     @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 sm:p-3 shadow-sm hover:bg-gray-50 transition-colors duration-200 text-sm sm:text-base;
+  }
+  .dark .back-button {
+    @apply border-slate-700 hover:bg-slate-800 text-white;
   }
   .auth-button {
     @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
@@ -88,6 +131,10 @@ form {
     @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
   }
 
+  .dark .resume-card {
+    @apply bg-slate-800;
+  }
+
   .resume-card-header {
     @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
   }
@@ -98,6 +145,10 @@ form {
 
   .navbar {
     @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+  }
+
+  .dark .navbar {
+    @apply bg-slate-800;
   }
 
   .score-badge {
@@ -111,8 +162,14 @@ form {
   .uplader-drag-area {
     @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
   }
+  .dark .uplader-drag-area {
+    @apply bg-slate-800;
+  }
   .uploader-selected-file {
     @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+  }
+  .dark .uploader-selected-file {
+    @apply bg-slate-700;
   }
 }
 

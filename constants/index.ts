@@ -235,7 +235,36 @@ export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: stri
       If provided, take the job description into consideration.
       The job title is: ${jobTitle}
       The job description is: ${jobDescription}
+      
+      Additional analysis requirements:
+      - Analyze the resume for ATS compatibility (keyword usage, formatting, section headers)
+      - Check for grammar and spelling issues
+      - Evaluate tone and professional language
+      - Assess skill relevance to the job description
+      - Review document structure and readability
+      - Provide specific, actionable improvement suggestions
+      
       Provide the feedback using the following format:
       ${AIResponseFormat}
       Return the analysis as an JSON object, without any other text and without the backticks.
       Do not include any other text or comments.`;
+
+// Enhanced prompts for different analysis types
+export const skillExtractionPrompt = (content: string) =>
+    `Extract all technical skills, soft skills, and professional competencies from this resume content. 
+     Return as a JSON array of strings. Focus on specific, relevant skills that would be valuable to employers.
+     
+     Resume content: ${content}`;
+
+export const grammarCheckPrompt = (content: string) =>
+    `Analyze this resume content for grammar, spelling, and writing quality issues. 
+     Provide specific suggestions for improvement.
+     
+     Resume content: ${content}`;
+
+export const toneAnalysisPrompt = (content: string) =>
+    `Analyze the tone and professional language of this resume. 
+     Evaluate if the language is confident, professional, and appropriate for job applications.
+     Provide suggestions for improvement.
+     
+     Resume content: ${content}`;
