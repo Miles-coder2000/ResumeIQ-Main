@@ -1,4 +1,4 @@
-content = """# 📄 ResuméIQ – AI Resume Analyzer  
+# 📄 ResuméIQ – AI Resume Analyzer  
 
 An intelligent, AI-powered resume analysis platform built with **React Router v7, TypeScript, TailwindCSS, and Puter.js**.  
 ResuméIQ helps job seekers improve their resumes with **AI feedback, ATS scoring, dashboards, comparisons, and career insights** — all in a **modern, responsive UI**.  
